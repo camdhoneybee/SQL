@@ -1,0 +1,47 @@
+--Create Vacation Club Database
+
+CREATE TABLE vacation_club (id INTEGER PRIMARY KEY, location TEXT, booking INTEGER, good_groups TEXT, price INTEGER, hotel TEXT);
+
+INSERT INTO vacation_club VALUES
+(1, "PUERTO PLATA", 100, "Yes", 300, "Villa");
+
+insert into vacation_club values (2, "Puerto Plata", 100, "No", 250, "Confresi");
+
+insert into vacation_club values (3, "Chicago", 0, "Yes", 0, "Home");
+
+insert into vacation_club values (4, "Nashville", 0, "Yes", 0, "Music");
+
+insert into vacation_club values (5, "Bahamas", 100, "No", 100, "Winston");
+
+insert into vacation_club values (6, "Dubai" , 100, "No", 250, "Habtoor");
+
+insert into vacation_club values (7, "Dubai", 100, "Yes", 300, "Villa");
+
+insert into vacation_club values (8, "Mexico", 100,"No", 300, "Ritmo");
+
+insert into vacation_club values (9, "Mexico", 100, "Yes", 200, "Selena");
+
+insert into vacation_club values (10, "Punta Cana", 100, "Yes", 240, "PC");
+
+insert into vacation_club values (11, "Puerto Plata", 100, "Yes", 700, "Studio");
+
+insert into vacation_club values (12, "Dubai", 50, "No", 400, "Tip");
+
+insert into vacation_club values (13, "Chicago", 0, "No", 100, "Dolton");
+
+insert into vacation_club values (14, "Nashville", 0, "No", 0, "Home");
+
+insert into vacation_club values (15, "Bahamas", 100, "Yes", 200, "Green");
+
+
+--display the database by price for locations that are good for groups
+
+select * from vacation_club where good_groups="Yes" order by price;
+
+--what is the total sum of prices?
+
+select sum (price) from vacation_club;
+
+--what is the average price of a vacation based on the location?
+
+select avg (price) from vacation_club order by location;
